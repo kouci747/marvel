@@ -1,6 +1,15 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, Text, View, Button, TextInput} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  TextInput,
+  FlatList,
+  ScrollView,
+} from 'react-native';
 import axios from 'axios';
+import styled from 'styled-components';
 
 const apikey = '5ce72e18d91433d23c50d67c510a9d05'; //public key
 const ts = 1;
@@ -25,13 +34,35 @@ const Characters = () => {
         console.log(error);
       });
   }, []);
+  const Container = styled.View`
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background: #010814;
+  `;
+  const MyText = styled.Text`
+    height: 40px;
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    //border: 1px solid gray;
+    color: #fff;
+  `;
 
   return (
-    <View>
-      {characters.map(character => (
-        <Text key={character.id}>{character.name}</Text>
-      ))}
-    </View>
+    <Container>
+      <ScrollView>
+        {characters.map(character => (
+          <MyText>{character.name}</MyText>
+        ))}
+      </ScrollView>
+
+      {/* <FlatList
+        data={characters}
+        renderItem={({item}) => <MyText> {item.name}</MyText>}
+        keyExtractor={item => item.id}
+      /> */}
+    </Container>
   );
 };
 
