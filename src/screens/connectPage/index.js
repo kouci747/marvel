@@ -5,9 +5,6 @@ import ConnectForm from '../../components/connectForm';
 function ConnectPage() {
   return (
     <>
-      <View>
-        <Text style={styles.text}>Welcome to the Connect Page</Text>
-      </View>
       <ConnectForm />
     </>
   );

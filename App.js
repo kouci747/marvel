@@ -24,7 +24,10 @@ const App = () => {
         <Text>Projet Marvel</Text>
       </View>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false, //mettre à true pour afficher les headers de toutes les pages
+          }}>
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="About" component={AboutScreen} />
           <Stack.Screen name="Connect" component={ConnectPage} />

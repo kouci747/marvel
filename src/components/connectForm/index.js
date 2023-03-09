@@ -1,10 +1,29 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, Text, View, Button, TextInput} from 'react-native';
+import styled from 'styled-components';
+import MarvelLogo from '../../components/marvelLogo';
+
 /*
 question au prof : commment récupérer le toekn renvoyé par 
 Pas besoin de créer un utilisateur, cette API renvoie un token de connexion lorsque les deux champs ci-dessus sont envoyés.
 
 */
+const Container = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background: #010814;
+`;
+
+const MyTextInput = styled.TextInput`
+  height: 40px;
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid gray;
+  color: #fff;
+`;
+
 const ConnectForm = () => {
   const [formValues, setFormValues] = useState({username: '', password: ''});
 
@@ -49,20 +68,21 @@ const ConnectForm = () => {
   };
 
   return (
-    <View>
-      <TextInput
+    <Container>
+      <MarvelLogo />
+      <MyTextInput
         value={formValues.username}
         onChangeText={value => handleInputChange('username', value)}
         placeholder="Enter your username"
       />
-      <TextInput
+      <MyTextInput
         value={formValues.password}
         secureTextEntry={true}
         onChangeText={value => handleInputChange('password', value)}
         placeholder="Enter your password"
       />
-      <Button title="Submit" onPress={handleSubmit} />
-    </View>
+      <Button title="Login" onPress={handleSubmit} />
+    </Container>
   );
 };
 
