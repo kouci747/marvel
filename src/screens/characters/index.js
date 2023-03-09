@@ -7,6 +7,7 @@ import {
   TextInput,
   FlatList,
   ScrollView,
+  TouchableOpacity,
 } from 'react-native';
 import axios from 'axios';
 import styled from 'styled-components';
@@ -53,7 +54,9 @@ const Characters = () => {
     <Container>
       <ScrollView>
         {characters.map(character => (
-          <MyText>{character.name}</MyText>
+          <TouchableOpacity>
+            <MyText>{character.name}</MyText>
+          </TouchableOpacity>
         ))}
       </ScrollView>
 
