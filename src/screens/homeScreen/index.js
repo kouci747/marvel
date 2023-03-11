@@ -11,8 +11,8 @@ const HomeScreen = ({navigation}) => {
       />
 
       <Button
-        title="Go to connect page"
-        onPress={() => navigation.navigate('Connect')}
+        title="Go to Characters page"
+        onPress={() => navigation.navigate('Characters')}
       />
     </View>
   );

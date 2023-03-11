@@ -68,6 +68,7 @@ const ConnectForm = () => {
           console.log('le token : ', token);
           //console.log('Login successful:', data);
           alert('bienvenue');
+          //navigation.navigate('Characters');
           navigation.navigate('Characters');
         })
         .catch(error => {
